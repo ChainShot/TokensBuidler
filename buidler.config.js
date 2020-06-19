@@ -1,4 +1,5 @@
 usePlugin("@nomiclabs/buidler-waffle");
+require('dotenv').config();
 
 // This is a sample Buidler task. To learn how to create your own go to
 // https://buidler.dev/guides/create-task.html
@@ -19,4 +20,13 @@ module.exports = {
   solc: {
     version: "0.6.8",
   },
+  networks: {
+    kovan: {
+      url: process.env.INFURA_ENDPOINT,
+      accounts: [process.env.PRIVATE_KEY],
+      auth: {
+        password: process.env.INFURA_SECRET,
+      }
+    }
+  }
 };
