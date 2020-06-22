@@ -6,7 +6,7 @@ const bre = require("@nomiclabs/buidler");
 
 async function main() {
   const Akoin = await ethers.getContractFactory("Akoin");
-  const amount = (50n * (10n ** 18n)).toString();
+  const amount = (150n * (10n ** 18n)).toString();
   const akoin = await Akoin.deploy(amount);
 
   await akoin.deployed();
